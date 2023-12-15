@@ -12,6 +12,8 @@ public class PlayerMovment : MonoBehaviour
     [SerializeField] LayerMask ground;
     [SerializeField] AnimationCurve animcurve;
     [SerializeField] float groundSpeed;
+    [SerializeField] float rotationSpeed;
+    [SerializeField] float rotation;
     Quaternion rotaionRef;
     Vector3 counterMovment;
     Ray ray;
@@ -29,11 +31,12 @@ public class PlayerMovment : MonoBehaviour
     private void Update()
     {
         playerInputs();
-        surfaceAligment();
+        look();
     }
     private void FixedUpdate()
     {
         setPlayerMove();
+        surfaceAligment();
     }
 
     void playerInputs()
@@ -42,9 +45,14 @@ public class PlayerMovment : MonoBehaviour
     }
     void setPlayerMove()
     {
-        counterMovment = new Vector3(-rb.velocity.x, 0, -rb.velocity.z);
-        rb.AddForce(movment * movmentSpeed);
-        rb.AddForce(counterMovment * coefficient);
+        if(movment != Vector3.zero)
+        {
+            var matrix = Matrix4x4.Rotate(Quaternion.Euler(0, rotation, 0));
+            var showedInput = matrix.MultiplyPoint3x4(movment);
+            counterMovment = new Vector3(-rb.velocity.x, 0, -rb.velocity.z);
+            rb.AddForce(showedInput * movmentSpeed);
+            rb.AddForce(counterMovment * coefficient);
+        }
     }
 
     void surfaceAligment()
@@ -57,6 +65,20 @@ public class PlayerMovment : MonoBehaviour
             rotaionRef = Quaternion.Lerp(transform.rotation ,
                 Quaternion.FromToRotation(Vector3.up , hit.normal),animcurve.Evaluate(groundSpeed));
             transform.rotation = Quaternion.Euler(rotaionRef.eulerAngles.x, transform.eulerAngles.y, rotaionRef.eulerAngles.z);
+        }
+    }
+
+    void look()
+    {
+        if (movment != Vector3.zero)
+        {
+
+            var matrix = Matrix4x4.Rotate(Quaternion.Euler(0, rotation, 0));
+            var showedInput = matrix.MultiplyPoint3x4(movment);
+            var relative = (transform.position + showedInput) - transform.position;
+            var rot = Quaternion.LookRotation(relative, Vector3.up);
+
+            transform.rotation = Quaternion.RotateTowards(transform.rotation , rot , rotationSpeed);
         }
     }
 }
