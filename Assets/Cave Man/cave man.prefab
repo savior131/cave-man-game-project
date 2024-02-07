@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6092652441651770125}
   - component: {fileID: 4858148920255178010}
   - component: {fileID: 1579184287492659222}
+  - component: {fileID: 6395633989378929990}
   m_Layer: 0
   m_Name: cave man
   m_TagString: Untagged
@@ -93,6 +94,26 @@ MonoBehaviour:
   characterController: {fileID: 4858148920255178010}
   gravity: -9.82
   gravityMultiplaier: 3
+--- !u!114 &6395633989378929990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6885240619921002692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb63121ca741513478c95dbb3cc33e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info: {fileID: 0}
+  maxDistance: 0
+  whatIsDecoration:
+    serializedVersion: 2
+    m_Bits: 0
+  whatIsTalkable:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &8014047622653255815
 PrefabInstance:
   m_ObjectHideFlags: 0
