@@ -1,8 +1,7 @@
- 
+
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering;
 using UnityEngine.UI;
 
 enum Speaker
@@ -37,6 +36,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] TextMeshProUGUI speakerName;
     [SerializeField] TextMeshProUGUI dialogueText;
     string dummySTR;
+    public static bool inDialogue=false;
     private void OnEnable()
     {
        showDialogue();
@@ -78,6 +78,8 @@ public class DialogueSystem : MonoBehaviour
         else
         {
             StopAllCoroutines();
+            inDialogue =  false;
+            gameObject.SetActive(false);
         }
        
     }
@@ -88,9 +90,10 @@ public class DialogueSystem : MonoBehaviour
     //}
     public void showDialogue()
     {
-       
+       inDialogue=true;
         dialoguePanel.SetActive(true);
         StartCoroutine(TextDisplay());
+        
         
     }
 

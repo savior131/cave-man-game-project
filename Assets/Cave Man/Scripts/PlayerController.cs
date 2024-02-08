@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float gravityMultiplaier = 3.0f;
     private void Update()
     {
+        if (DialogueSystem.inDialogue) return; 
         handleGravity();
         handleMovment();
     }

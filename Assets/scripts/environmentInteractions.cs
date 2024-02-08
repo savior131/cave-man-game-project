@@ -9,12 +9,14 @@ public class EnvironmentInteractions : MonoBehaviour
     [SerializeField] float maxDistance;
     [SerializeField] LayerMask whatIsDecoration;
     [SerializeField] LayerMask whatIsTalkable;
+    [SerializeField] LayerMask whatIsCollected;
+    [SerializeField]GameObject speakButton;
+    [SerializeField]GameObject collectButton;
     private Transform gameObjectTransform;
     private Collider col;
     GameObject hitObject;
     Ray ray;
     RaycastHit hit;
-    [SerializeField]GameObject speakButton;
    
 
     private void Awake()
@@ -42,14 +44,19 @@ public class EnvironmentInteractions : MonoBehaviour
         else
         {
         speakButton.SetActive(false);  
+        }
        
+        if (Physics.Raycast(ray, out hit, maxDistance, whatIsCollected))
+        {
+           
+            collectButton.SetActive(true);
+            
+        }
+        else
+        {
+            collectButton.SetActive(false);
         }
     }
   
-    // Visualize the ray in the Scene view
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(col.bounds.center, gameObjectTransform.forward * maxDistance);
-    }
+   
 }
