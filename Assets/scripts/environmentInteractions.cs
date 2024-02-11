@@ -14,10 +14,10 @@ public class EnvironmentInteractions : MonoBehaviour
     [SerializeField]GameObject collectButton;
     private Transform gameObjectTransform;
     private Collider col;
-    GameObject hitObject;
-    Ray ray;
-    RaycastHit hit;
    
+    bool foundDecoration;
+    bool foundTalkable;
+    bool foundCollectable;
 
     private void Awake()
     {
@@ -27,36 +27,50 @@ public class EnvironmentInteractions : MonoBehaviour
 
     void Update()
     {
-        ray = new Ray(col.bounds.center, gameObjectTransform.forward);
-        if (Physics.Raycast(ray, out hit, maxDistance, whatIsDecoration))
+        Collider[] cols = Physics.OverlapSphere(col.bounds.center, maxDistance);
+        foundDecoration = false;
+        foundTalkable=false;
+        foundCollectable=false;
+        for (int i=0;i<cols.Length;i++)
+            {
+            if ((whatIsCollected & (1 << cols[i].gameObject.layer)) != 0&&dialogueToggle.dialogueFinished)
+            {
+                foundCollectable = true;
+                collectButton.SetActive(true);
+            }
+            else if ((whatIsDecoration & (1 << cols[i].gameObject.layer)) != 0)
+            {
+               foundDecoration = true;
+                info.text = cols[i].gameObject.tag;
+            }
+            else if ((whatIsTalkable & (1 << cols[i].gameObject.layer)) != 0&&!dialogueToggle.dialogueFinished)
+            {
+                foundTalkable = true;
+                speakButton.SetActive(true);
+            }
+          
+
+            }
+        if(!foundDecoration)
         {
-            hitObject = hit.collider.gameObject;
-            info.text = hitObject.tag;
+            info.text=string.Empty; 
         }
-        else
+        if (!foundTalkable)
         {
-            info.text=string.Empty;
+            speakButton.SetActive(false);
         }
-        if (Physics.Raycast(ray, out hit, maxDistance, whatIsTalkable))
-        {
-         speakButton.SetActive(true);
-        }
-        else
-        {
-        speakButton.SetActive(false);  
-        }
-       
-        if (Physics.Raycast(ray, out hit, maxDistance, whatIsCollected))
-        {
-           
-            collectButton.SetActive(true);
-            
-        }
-        else
+        if(!foundCollectable)
         {
             collectButton.SetActive(false);
         }
+
     }
-  
-   
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(col.bounds.center, maxDistance);
+    }
+
 }

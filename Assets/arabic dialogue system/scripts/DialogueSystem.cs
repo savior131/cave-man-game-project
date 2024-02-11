@@ -79,7 +79,6 @@ public class DialogueSystem : MonoBehaviour
         {
             StopAllCoroutines();
             inDialogue =  false;
-            gameObject.SetActive(false);
         }
        
     }
