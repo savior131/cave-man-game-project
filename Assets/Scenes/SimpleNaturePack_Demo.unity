@@ -1373,9 +1373,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 785321493}
-        m_TargetAssemblyTypeName: dialogueENable, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1006785302}
+        m_TargetAssemblyTypeName: dialogueToggle, Assembly-CSharp
+        m_MethodName: enable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4761,6 +4761,7 @@ GameObject:
   - component: {fileID: 1006785297}
   - component: {fileID: 1006785296}
   - component: {fileID: 1006785301}
+  - component: {fileID: 1006785302}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4868,6 +4869,20 @@ MonoBehaviour:
   playerAnim: {fileID: 382745179}
   cam: {fileID: 2115876898}
   size: 20
+--- !u!114 &1006785302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006785295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c18aba7be678a40a726f92636f8a73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handler: {fileID: 785321493}
+  button: {fileID: 364373768}
 --- !u!4 &1112104828 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5202732821079344928, guid: cebfacc247a640945a2c30b442202fca, type: 3}

@@ -31,10 +31,12 @@ public class EnvironmentInteractions : MonoBehaviour
         foundDecoration = false;
         foundTalkable=false;
         foundCollectable=false;
+        bool collectedTrees=false;
         for (int i=0;i<cols.Length;i++)
             {
-            if ((whatIsCollected & (1 << cols[i].gameObject.layer)) != 0&&dialogueToggle.dialogueFinished)
+            if ((whatIsCollected & (1 << cols[i].gameObject.layer)) != 0&&dialogueToggle.dialogueFinished &&!collectedTrees)
             {
+                collectedTrees = true;
                 foundCollectable = true;
                 collectButton.SetActive(true);
             }

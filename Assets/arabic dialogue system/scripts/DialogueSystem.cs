@@ -50,10 +50,11 @@ public class DialogueSystem : MonoBehaviour
     IEnumerator TextDisplay()
     {
        
-        dialogueText.text = string.Empty;
-        dummySTR = string.Empty;
+        
         if (index < entries.Length)
         {
+            dialogueText.text = string.Empty;
+            dummySTR = string.Empty;
             int speakerIndex = (int)entries[index].speaker;
               speakerName.text = characters[speakerIndex].name;
             if (characters[speakerIndex].characterImage != null)
