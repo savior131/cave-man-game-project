@@ -71,8 +71,8 @@ public class EnvironmentInteractions : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(col.bounds.center, maxDistance);
+      //  Gizmos.color = Color.yellow;
+       // Gizmos.DrawWireSphere(col.bounds.center, maxDistance);
     }
 
 }

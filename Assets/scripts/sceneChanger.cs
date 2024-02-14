@@ -10,11 +10,16 @@ public class sceneChanger : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void backToCave (){
+        CameraShake.instance.setCameraShake(3, 0.3f);
+        StartCoroutine(delaySceneRealode());
+    }
+    IEnumerator delaySceneRealode()
+    {
+        yield return new WaitForSeconds(0.3f);
         dialogueToggle.dialogueFinished = false;
         DialogueSystem.inDialogue = false;
         SceneManager.LoadScene(0);
-
-        }
+    }
 
    
 }

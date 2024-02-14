@@ -91,10 +91,8 @@ public class DialogueSystem : MonoBehaviour
     public void showDialogue()
     {
        inDialogue=true;
-        dialoguePanel.SetActive(true);
-        StartCoroutine(TextDisplay());
-        
-        
+       dialoguePanel.SetActive(true);
+       StartCoroutine(TextDisplay()); 
     }
 
 }
