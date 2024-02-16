@@ -7,9 +7,9 @@ public class Interactions : MonoBehaviour
     [SerializeField] Animator anim;
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+       /* if(Input.GetKeyDown(KeyCode.E))
         {
             anim.SetTrigger("Inspect");
-        }
+        }*/
     }
 }

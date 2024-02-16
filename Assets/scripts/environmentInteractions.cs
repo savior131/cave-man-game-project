@@ -12,13 +12,14 @@ public class EnvironmentInteractions : MonoBehaviour
     [SerializeField] LayerMask whatIsCollected;
     [SerializeField]GameObject speakButton;
     [SerializeField]GameObject collectButton;
+    [SerializeField] Transform hand;
     private Transform gameObjectTransform;
     private Collider col;
-   
     bool foundDecoration;
     bool foundTalkable;
     bool foundCollectable;
-
+    public static bool spearTaken;
+   [SerializeField] GameObject spearInHand;
     private void Awake()
     {
         gameObjectTransform = GetComponent<Transform>();
@@ -42,6 +43,11 @@ public class EnvironmentInteractions : MonoBehaviour
             }
             else if ((whatIsDecoration & (1 << cols[i].gameObject.layer)) != 0)
             {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    cols[i].gameObject.SetActive(false);
+                  spearTaken = true;
+                }
                foundDecoration = true;
                 info.text = cols[i].gameObject.tag;
             }
@@ -65,14 +71,22 @@ public class EnvironmentInteractions : MonoBehaviour
         {
             collectButton.SetActive(false);
         }
+        if (spearTaken)
+        {
+            spearInHand.SetActive(true);
+        }
+        else
+        {
+            spearInHand.SetActive(false);
 
+        }
     }
 
 
-    private void OnDrawGizmos()
+  /*  private void OnDrawGizmos()
     {
       //  Gizmos.color = Color.yellow;
        // Gizmos.DrawWireSphere(col.bounds.center, maxDistance);
-    }
+    }*/
 
 }
