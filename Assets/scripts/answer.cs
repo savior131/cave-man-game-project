@@ -8,12 +8,12 @@ public class answer : MonoBehaviour
 {
     AudioManger aduio;
     MusicManger music;
-
-    private void Awake()
+    private void Start()
     {
         aduio = GameObject.FindGameObjectWithTag("Audio Manger").GetComponent<AudioManger>();
-        music = GameObject.FindGameObjectWithTag("Music Manger").GetComponent<MusicManger>();
+        music = GameObject.FindGameObjectWithTag("Music Manger").GetComponent<MusicManger>();        
     }
+   
     public void correctAnswer()
     {
         gameObject.SetActive(false);

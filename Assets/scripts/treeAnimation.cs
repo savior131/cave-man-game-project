@@ -7,7 +7,7 @@ using UnityEngine;
 public class treeAnimation : MonoBehaviour
 {
     Animator[] animator;
-    [SerializeField]Animator playerAnim;
+   // [SerializeField]Animator playerAnim;
     [SerializeField] CinemachineVirtualCamera cam;
     [SerializeField] float size;
     void Start()

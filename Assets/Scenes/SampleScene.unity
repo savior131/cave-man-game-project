@@ -1471,6 +1471,10 @@ PrefabInstance:
       propertyPath: collectButton
       value: 
       objectReference: {fileID: 1291363534}
+    - target: {fileID: 4605984683209101354, guid: c1b9984c06d94c9479d95710fe774329, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6210761579526164322, guid: c1b9984c06d94c9479d95710fe774329, type: 3}
       propertyPath: m_Name
       value: player

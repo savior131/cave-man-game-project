@@ -1,5 +1,6 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerHunt : MonoBehaviour
@@ -7,44 +8,46 @@ public class PlayerHunt : MonoBehaviour
     [SerializeField] Transform Rabbit;
     [SerializeField] Transform character;
     [SerializeField] float rotationSpeed;
+    [SerializeField] float maxDistance;
+    [SerializeField] LayerMask whatIsHunted;
+    [SerializeField] TextMeshProUGUI huntText;
+    bool hunting=false;
     Vector3 dir;
-    float hold =0;
+    private Collider col;   
     [HideInInspector]public bool Hunt = false;
-    [SerializeField] GameObject spear;
-    [SerializeField] float maxSpeed;
-    [SerializeField] int maxHoldTime;
-    Rigidbody rbSpear;
+
+
     private void Start()
     {
-        rbSpear = spear.GetComponent<Rigidbody>();
+        col = GetComponent<Collider>();
     }
     private void Update()
     {
-        
-        if (Input.GetKey(KeyCode.E))
+        Collider[] cols = Physics.OverlapSphere(col.bounds.center, maxDistance);
+        for (int i = 0; i < cols.Length; i++)
         {
-            playerLookToRabbit();
-            handlePlayerHunt();
-            Hunt = true;
-            hold += Time.deltaTime;
-            
+            if ((whatIsHunted & (1 << cols[i].gameObject.layer))!=0){
+                hunting = true;
+            }
+        }
+        if (hunting)
+        {
+            huntText.gameObject.SetActive(true);
+            huntText.text = "اضغط";
+            if (Input.GetKey(KeyCode.E))
+            {
+                playerLookToRabbit();
+                handlePlayerHunt();
+                Invoke("KillRabbit", 1.5f);
+            }
         }
         else
         {
-            Hunt= false;
+            huntText.text=string.Empty;
         }
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            if(hold >= maxHoldTime)
-            {
-                rbSpear.velocity = new Vector3(rbSpear.velocity.x, rbSpear.velocity.y, maxSpeed);
-            }
-            else
-            {
-                rbSpear.velocity = new Vector3(rbSpear.velocity.x, rbSpear.velocity.y, maxSpeed * hold /maxHoldTime);
-            }
-            hold = 0;
-        }
+       
+     
+       
     }
     void handlePlayerHunt()
     {
@@ -54,5 +57,9 @@ public class PlayerHunt : MonoBehaviour
     {
         dir = Rabbit.transform.position - character.transform.position;
     }
-    
+    void KillRabbit()
+    {
+       Rabbit.gameObject.SetActive(false); 
+
+    }
 }

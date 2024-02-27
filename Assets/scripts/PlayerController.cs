@@ -22,10 +22,13 @@ public class PlayerController : MonoBehaviour
     {
        // if (DialogueSystem.inDialogue) return; 
         handleGravity();
-        Debug.Log(playerHunt.Hunt);
+        if(playerHunt != null)
+        {
+
         if (playerHunt.Hunt) {
             anim.SetFloat("speed", 0);
             return; 
+        }
         }
         handleMovment();
     }
