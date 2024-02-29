@@ -2,11 +2,12 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 enum Speaker
 {
-    youngPharaoh,deer,rock, mina
+    youngPharaoh,deer,rock, mina,plant 
 }
 
 [System.Serializable]
@@ -31,6 +32,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private float timeBetweenCharacters;
     [SerializeField] private float timeBetweenEntries;
     [Header("dialogue canvas")]
+    [SerializeField] private bool isEnd;
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] Image speakerImage;
     [SerializeField] TextMeshProUGUI speakerName;
@@ -80,6 +82,10 @@ public class DialogueSystem : MonoBehaviour
         {
             StopAllCoroutines();
             inDialogue =  false;
+            if(isEnd)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            }
         }
        
     }

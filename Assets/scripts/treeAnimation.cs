@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class treeAnimation : MonoBehaviour
 {
+    [SerializeField] GameObject dialogue;
     Animator[] animator;
    // [SerializeField]Animator playerAnim;
     [SerializeField] CinemachineVirtualCamera cam;
@@ -25,6 +26,11 @@ public class treeAnimation : MonoBehaviour
         for (int i = 0;i < animator.Length;i++) {
             animator[i].enabled = true;
         }
+        Invoke("dialogueActivator", 1.5f);
+    }
+    void dialogueActivator()
+    {
+        dialogue.SetActive(true);
     }
     
 }

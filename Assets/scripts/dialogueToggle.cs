@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class dialogueToggle : MonoBehaviour
 {
-    [SerializeField] GameObject handler;
+    [SerializeField] GameObject[] handler;
     [SerializeField] GameObject button;
     public static bool dialogueFinished=false;
+    int i = 0;
     public void enable()
     {
         if (dialogueFinished) return;
-        handler.SetActive(true);
+        handler[i].SetActive(true);
         button.SetActive(false);
         dialogueFinished = true;
+        i++;
     }
 }

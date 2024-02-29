@@ -16,9 +16,9 @@ public class answer : MonoBehaviour
    
     public void correctAnswer()
     {
-        gameObject.SetActive(false);
         aduio.playCorrectAnswerSoundEffect();
         music.playSadMusic();
+        gameObject.SetActive(false);
     }
     public void wrongAnswer()
     {

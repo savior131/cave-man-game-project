@@ -10,6 +10,9 @@ TagManager:
   - Music Manger
   - "\u0646\u0628\u062A\u0647"
   - "\u0637\u0648\u0628\u0647 \u0644\u0628\u0646\u0647"
+  - plant
+  - rock
+  - mina
   layers:
   - Default
   - TransparentFX

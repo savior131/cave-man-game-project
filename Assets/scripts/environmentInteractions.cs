@@ -19,6 +19,7 @@ public class EnvironmentInteractions : MonoBehaviour
     bool foundTalkable;
     bool foundCollectable;
     public static bool spearTaken;
+    GameObject collidedOBJ;
    [SerializeField] GameObject spearInHand;
     private void Awake()
     {
@@ -53,9 +54,12 @@ public class EnvironmentInteractions : MonoBehaviour
             }
             else if ((whatIsTalkable & (1 << cols[i].gameObject.layer)) != 0&&!dialogueToggle.dialogueFinished)
             {
+                collidedOBJ = cols[i].gameObject;
                 foundTalkable = true;
                 speakButton.SetActive(true);
             }
+           
+            
           
 
             }
@@ -71,7 +75,7 @@ public class EnvironmentInteractions : MonoBehaviour
         {
             collectButton.SetActive(false);
         }
-        if (spearTaken)
+       if (spearTaken)
         {
             spearInHand.SetActive(true);
         }
@@ -80,13 +84,23 @@ public class EnvironmentInteractions : MonoBehaviour
             spearInHand.SetActive(false);
 
         }
+        if (dialogueToggle.dialogueFinished)
+        {
+            Invoke("deactivator", 2.5f);
+        }
+    }
+ void deactivator()
+    {
+        collidedOBJ.gameObject.SetActive(false);
+
+        dialogueToggle.dialogueFinished = false;
+
     }
 
-
-  /*  private void OnDrawGizmos()
-    {
-      //  Gizmos.color = Color.yellow;
-       // Gizmos.DrawWireSphere(col.bounds.center, maxDistance);
-    }*/
+    /*  private void OnDrawGizmos()
+      {
+        //  Gizmos.color = Color.yellow;
+         // Gizmos.DrawWireSphere(col.bounds.center, maxDistance);
+      }*/
 
 }
