@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class MusicManger : MonoBehaviour
 {
-    private static MusicManger instance;
+    public static MusicManger instance;
     [Header("Sad Music")]
     [SerializeField] AudioClip SadMusic;
     AudioSource audioSource;
     private void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
-    private void Start()
     {
         if (instance == null)
         {
@@ -23,7 +19,9 @@ public class MusicManger : MonoBehaviour
         {
             Destroy(gameObject);
         }
+       
     }
+    
     IEnumerator soundVolumeDown()
     {
         while (true)

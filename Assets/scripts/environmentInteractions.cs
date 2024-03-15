@@ -12,6 +12,7 @@ public class EnvironmentInteractions : MonoBehaviour
     [SerializeField] LayerMask whatIsCollected;
     [SerializeField]GameObject speakButton;
     [SerializeField]GameObject collectButton;
+    [SerializeField]GameObject guideTXT;
     [SerializeField] Transform hand;
     private Transform gameObjectTransform;
     private Collider col;
@@ -19,6 +20,7 @@ public class EnvironmentInteractions : MonoBehaviour
     bool foundTalkable;
     bool foundCollectable;
     public static bool spearTaken;
+    bool collectedTrees = false;
     GameObject collidedOBJ;
    [SerializeField] GameObject spearInHand;
     private void Awake()
@@ -33,10 +35,9 @@ public class EnvironmentInteractions : MonoBehaviour
         foundDecoration = false;
         foundTalkable=false;
         foundCollectable=false;
-        bool collectedTrees=false;
         for (int i=0;i<cols.Length;i++)
             {
-            if ((whatIsCollected & (1 << cols[i].gameObject.layer)) != 0&&dialogueToggle.dialogueFinished &&!collectedTrees)
+            if ((whatIsCollected & (1 << cols[i].gameObject.layer)) != 0&&dialogueToggle.dialogueFinished)
             {
                 collectedTrees = true;
                 foundCollectable = true;
@@ -44,6 +45,7 @@ public class EnvironmentInteractions : MonoBehaviour
             }
             else if ((whatIsDecoration & (1 << cols[i].gameObject.layer)) != 0)
             {
+                guideTXT.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     cols[i].gameObject.SetActive(false);
@@ -52,9 +54,9 @@ public class EnvironmentInteractions : MonoBehaviour
                foundDecoration = true;
                 info.text = cols[i].gameObject.tag;
             }
-            else if ((whatIsTalkable & (1 << cols[i].gameObject.layer)) != 0&&!dialogueToggle.dialogueFinished)
+            else if ((whatIsTalkable & (1 << cols[i].gameObject.layer)) != 0)
             {
-                collidedOBJ = cols[i].gameObject;
+             
                 foundTalkable = true;
                 speakButton.SetActive(true);
             }
@@ -65,6 +67,7 @@ public class EnvironmentInteractions : MonoBehaviour
             }
         if(!foundDecoration)
         {
+            guideTXT.SetActive(false);
             info.text=string.Empty; 
         }
         if (!foundTalkable)
@@ -91,9 +94,9 @@ public class EnvironmentInteractions : MonoBehaviour
     }
  void deactivator()
     {
-        collidedOBJ.gameObject.SetActive(false);
+       
 
-        dialogueToggle.dialogueFinished = false;
+       // dialogueToggle.dialogueFinished = false;
 
     }
 

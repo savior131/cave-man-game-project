@@ -84,6 +84,7 @@ public class DialogueSystem : MonoBehaviour
             inDialogue =  false;
             if(isEnd)
             {
+                dialogueToggle.dialogueFinished = true;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
             }
         }

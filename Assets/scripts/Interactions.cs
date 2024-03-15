@@ -8,7 +8,7 @@ public class Interactions : MonoBehaviour
     bool canAttack=true;
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E)&&canAttack)
+        if(Input.GetKeyDown(KeyCode.E)&&canAttack&&EnvironmentInteractions.spearTaken)
         {
             StartCoroutine(f());
 

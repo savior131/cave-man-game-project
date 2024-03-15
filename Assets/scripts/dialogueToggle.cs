@@ -10,7 +10,7 @@ public class dialogueToggle : MonoBehaviour
     int i = 0;
     public void enable()
     {
-        if (dialogueFinished) return;
+      
         handler[i].SetActive(true);
         button.SetActive(false);
         dialogueFinished = true;

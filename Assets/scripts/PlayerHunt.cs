@@ -10,7 +10,7 @@ public class PlayerHunt : MonoBehaviour
     [SerializeField] float rotationSpeed;
     [SerializeField] float maxDistance;
     [SerializeField] LayerMask whatIsHunted;
-    [SerializeField] TextMeshProUGUI huntText;
+    [SerializeField] GameObject  huntText;
     bool hunting=false;
     Vector3 dir;
     private Collider col;   
@@ -24,26 +24,29 @@ public class PlayerHunt : MonoBehaviour
     private void Update()
     {
         Collider[] cols = Physics.OverlapSphere(col.bounds.center, maxDistance);
+        hunting=false ;
         for (int i = 0; i < cols.Length; i++)
         {
             if ((whatIsHunted & (1 << cols[i].gameObject.layer))!=0){
                 hunting = true;
+
             }
+
         }
-        if (hunting)
+        if (hunting&EnvironmentInteractions.spearTaken)
         {
-            huntText.gameObject.SetActive(true);
-            huntText.text = "اضغط";
+            Debug.Log("entered hunting");
+            huntText.SetActive(true);
             if (Input.GetKey(KeyCode.E))
             {
                 playerLookToRabbit();
                 handlePlayerHunt();
-                Invoke("KillRabbit", 1.5f);
+                Invoke("KillRabbit", 0.7f);
             }
         }
         else
         {
-            huntText.text=string.Empty;
+            huntText.SetActive(false);
         }
        
      

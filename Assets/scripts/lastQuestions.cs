@@ -9,9 +9,9 @@ public class lastQuestions : MonoBehaviour
     int i = 0; 
     public void nextQuestions()
     {
-        if(i==dialogues.Length-1) {
+     /*   if(i==dialogues.Length-1) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        }*/
         dialogues[i].SetActive(false);
         i++;
         dialogues[i].SetActive(true);

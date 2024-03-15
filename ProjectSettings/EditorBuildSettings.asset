@@ -6,12 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main menu.unity
+    guid: 4a4c75e7aed695a40baa235231313249
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9cf9ea78b5807ca4889164a1afca42a7
   - enabled: 1
-    path: Assets/Scenes/SimpleNaturePack_Demo.unity
+    path: Assets/Scenes/tany scene.unity
     guid: 22816794d27ed8446abe4979be523fa0
   - enabled: 1
-    path: Assets/Scenes/Main menu.unity
-    guid: 4a4c75e7aed695a40baa235231313249
+    path: Assets/Scenes/tany scene bardo.unity
+    guid: 52d4749358a2a6f489758a1d30a6cc5b
+  - enabled: 1
+    path: Assets/Scenes/final scene.unity
+    guid: 6f8345c6bed19004db48de4906b9b999
+  - enabled: 1
+    path: Assets/Scenes/prize.unity
+    guid: aa69907144ad5ba4395f65ec37ebc783
   m_configObjects: {}

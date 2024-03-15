@@ -22,6 +22,7 @@ public class treeAnimation : MonoBehaviour
     }
     public void enableAnime()
     {
+        dialogueToggle.dialogueFinished = false;
         cam.m_Lens.OrthographicSize = size;
         for (int i = 0;i < animator.Length;i++) {
             animator[i].enabled = true;
