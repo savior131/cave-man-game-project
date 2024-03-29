@@ -1,13 +1,13 @@
- 
+
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 enum Speaker
 {
-    youngPharaoh,deer,rock, mina
+    youngPharaoh,deer,rock, mina,plant 
 }
 
 [System.Serializable]
@@ -32,11 +32,13 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private float timeBetweenCharacters;
     [SerializeField] private float timeBetweenEntries;
     [Header("dialogue canvas")]
+    [SerializeField] private bool isEnd;
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] Image speakerImage;
     [SerializeField] TextMeshProUGUI speakerName;
     [SerializeField] TextMeshProUGUI dialogueText;
     string dummySTR;
+    public static bool inDialogue=false;
     private void OnEnable()
     {
        showDialogue();
@@ -50,10 +52,11 @@ public class DialogueSystem : MonoBehaviour
     IEnumerator TextDisplay()
     {
        
-        dialogueText.text = string.Empty;
-        dummySTR = string.Empty;
+        
         if (index < entries.Length)
         {
+            dialogueText.text = string.Empty;
+            dummySTR = string.Empty;
             int speakerIndex = (int)entries[index].speaker;
               speakerName.text = characters[speakerIndex].name;
             if (characters[speakerIndex].characterImage != null)
@@ -78,6 +81,12 @@ public class DialogueSystem : MonoBehaviour
         else
         {
             StopAllCoroutines();
+            inDialogue =  false;
+            if(isEnd)
+            {
+                dialogueToggle.dialogueFinished = true;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            }
         }
        
     }
@@ -88,10 +97,9 @@ public class DialogueSystem : MonoBehaviour
     //}
     public void showDialogue()
     {
-       
-        dialoguePanel.SetActive(true);
-        StartCoroutine(TextDisplay());
-        
+       inDialogue=true;
+       dialoguePanel.SetActive(true);
+       StartCoroutine(TextDisplay()); 
     }
 
 }
