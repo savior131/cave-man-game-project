@@ -11,11 +11,12 @@ public class PlayerHunt : MonoBehaviour
     [SerializeField] float maxDistance;
     [SerializeField] LayerMask whatIsHunted;
     [SerializeField] GameObject  huntText;
+    [SerializeField] GameObject meat;
     bool hunting=false;
     Vector3 dir;
     private Collider col;   
     [HideInInspector]public bool Hunt = false;
-
+    bool rabbitDeath = false;
 
     private void Start()
     {
@@ -37,7 +38,7 @@ public class PlayerHunt : MonoBehaviour
         {
             Debug.Log("entered hunting");
             huntText.SetActive(true);
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyUp(KeyCode.E) && !rabbitDeath)
             {
                 playerLookToRabbit();
                 handlePlayerHunt();
@@ -62,7 +63,11 @@ public class PlayerHunt : MonoBehaviour
     }
     void KillRabbit()
     {
-       Rabbit.gameObject.SetActive(false); 
-
+        rabbitDeath = true;
+        Rabbit.gameObject.GetComponentInChildren<Animator>().SetTrigger("Death");
+        Rabbit.gameObject.GetComponent<RabbitBehavior>().enabled = false;
+        Instantiate(meat, Rabbit.transform.position + new Vector3(0.5f , 0 , 0), Quaternion.identity);
+        Instantiate(meat, Rabbit.transform.position, Quaternion.identity);
+        Destroy(Rabbit.gameObject, 1f);
     }
 }

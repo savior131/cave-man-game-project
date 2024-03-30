@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RabbitBehavior : MonoBehaviour
 {
-    [SerializeField] float speed;
+    public float speed;
     Vector3 dir;
     [SerializeField] float rotationSpeed;
     [SerializeField] Transform rabbit;
