@@ -7,19 +7,19 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Main menu.unity
-    guid: 4a4c75e7aed695a40baa235231313249
+    guid: 666ab36ef07a6be4686956b68fdb8c1b
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
-    guid: 9cf9ea78b5807ca4889164a1afca42a7
+    guid: a95e3bb3cb92aaf4abfb19c06f53034a
   - enabled: 1
     path: Assets/Scenes/tany scene.unity
     guid: 22816794d27ed8446abe4979be523fa0
   - enabled: 1
     path: Assets/Scenes/tany scene bardo.unity
-    guid: 52d4749358a2a6f489758a1d30a6cc5b
+    guid: 4598328a0fc44024d93ee78176a32f22
   - enabled: 1
     path: Assets/Scenes/final scene.unity
-    guid: 6f8345c6bed19004db48de4906b9b999
+    guid: 1b1e8f03531248042acf77429a9a9297
   - enabled: 1
     path: Assets/Scenes/prize.unity
     guid: aa69907144ad5ba4395f65ec37ebc783

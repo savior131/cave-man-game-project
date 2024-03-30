@@ -19,7 +19,6 @@ public class answer : MonoBehaviour
     {
         dialogueToggle.dialogueFinished=true;
         aduio.playCorrectAnswerSoundEffect();
-        music.playSadMusic();
         otherSpeaker.SetActive(false);
         gameObject.SetActive(false);
     }
@@ -27,14 +26,12 @@ public class answer : MonoBehaviour
     {
         dialogueToggle.dialogueFinished = true;
         aduio.playCorrectAnswerSoundEffect();
-        music.playSadMusic();
         StartCoroutine(delayNextScene());
         
     }
     public void correctSound()
     {
         aduio.playCorrectAnswerSoundEffect();
-        music.playSadMusic();
     }
     public void wrongAnswer()
     {
