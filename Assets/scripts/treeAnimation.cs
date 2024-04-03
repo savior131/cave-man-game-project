@@ -12,6 +12,9 @@ public class treeAnimation : MonoBehaviour
    // [SerializeField]Animator playerAnim;
     [SerializeField] CinemachineVirtualCamera cam;
     [SerializeField] float size;
+    bool zoomOut;
+    bool zoomIn;
+    float initSize=0;
     void Start()
     {
         animator = new Animator[gameObject.transform.childCount];
@@ -21,12 +24,22 @@ public class treeAnimation : MonoBehaviour
         }
         
     }
+    private void Update()
+    {
+        if(zoomOut)
+            SmoothZoomOut();
+        if(zoomIn)
+            SmoothZoomIn();
+    }
     public void enableAnime()
     {
+        initSize = cam.m_Lens.OrthographicSize;
         dialogueToggle.dialogueFinished = false;
-        cam.m_Lens.OrthographicSize = size;
+        zoomOut = true;
+        StartCoroutine(omg());
         for (int i = 0;i < animator.Length;i++) {
             animator[i].enabled = true;
+            
         }
         Invoke("dialogueActivator", 1.5f);
     }
@@ -34,5 +47,21 @@ public class treeAnimation : MonoBehaviour
     {
        // dialogue.SetActive(true);
     }
-    
+    void SmoothZoomOut()
+    {
+        cam.m_Lens.OrthographicSize = Mathf.Lerp(cam.m_Lens.OrthographicSize,size,Time.deltaTime);
+        if (size - cam.m_Lens.OrthographicSize < 0.2)
+            zoomOut = false;
+    }
+    void SmoothZoomIn()
+    {
+        cam.m_Lens.OrthographicSize = Mathf.Lerp(cam.m_Lens.OrthographicSize, initSize, Time.deltaTime);
+        if(cam.m_Lens.OrthographicSize-initSize<0.2)
+            zoomIn = false;
+    }
+    IEnumerator omg()
+    {
+        yield return new WaitForSeconds(5);
+        zoomIn = true;
+    }
 }
