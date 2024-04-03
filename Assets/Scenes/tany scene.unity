@@ -4665,9 +4665,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89c18aba7be678a40a726f92636f8a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 533485276}
   handler:
   - {fileID: 785321493}
   button: {fileID: 364373768}
+  size: 5
 --- !u!1 &1011646268 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ee417d4c18b01944fa5cb91fc6370590, type: 3}

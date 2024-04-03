@@ -9,6 +9,7 @@ public class answer : MonoBehaviour
     AudioManger aduio;
     MusicManger music;
     [SerializeField]GameObject otherSpeaker;
+
     private void Start()
     {
         aduio = GameObject.FindGameObjectWithTag("Audio Manger").GetComponent<AudioManger>();
@@ -17,6 +18,7 @@ public class answer : MonoBehaviour
    
     public void correctAnswer()
     {
+        dialogueToggle.zoomOut = true;
         dialogueToggle.dialogueFinished=true;
         PlayerCollectItems.score += 50; 
         aduio.playCorrectAnswerSoundEffect();

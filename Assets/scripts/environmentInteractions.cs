@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,6 +6,7 @@ using UnityEngine;
 
 public class EnvironmentInteractions : MonoBehaviour
 {
+    public static Transform mean;
     [SerializeField] TextMeshProUGUI info;
     [SerializeField] float maxDistance;
     [SerializeField] LayerMask whatIsDecoration;
@@ -25,10 +27,13 @@ public class EnvironmentInteractions : MonoBehaviour
    [SerializeField] GameObject spearInHand;
     private void Awake()
     {
+        mean = guideTXT.transform;
         gameObjectTransform = GetComponent<Transform>();
         col = GetComponent<Collider>();
+        mean.position= Vector3.zero;
+        mean.rotation= Quaternion.identity;
+        mean.localScale= Vector3.one;
     }
-
     void Update()
     {
         Collider[] cols = Physics.OverlapSphere(col.bounds.center, maxDistance);
@@ -51,12 +56,15 @@ public class EnvironmentInteractions : MonoBehaviour
                     cols[i].gameObject.SetActive(false);
                   spearTaken = true;
                 }
-               foundDecoration = true;
+                foundDecoration = true;
                 info.text = cols[i].gameObject.tag;
             }
             else if ((whatIsTalkable & (1 << cols[i].gameObject.layer)) != 0)
             {
-             
+                    mean.position = new Vector3(
+                    (cols[i].gameObject.transform.position.x + transform.position.x) / 2,
+                    (cols[i].gameObject.transform.position.y + transform.position.y) / 2,
+                    (cols[i].gameObject.transform.position.z + transform.position.z) / 2);
                 foundTalkable = true;
                 speakButton.SetActive(true);
             }
