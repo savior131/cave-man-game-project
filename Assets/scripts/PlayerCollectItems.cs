@@ -36,9 +36,18 @@ public class PlayerCollectItems : MonoBehaviour
         appleText.text = appleCount.ToString();
         meatText.text = meatCount.ToString();
 
-        if (GameObject.FindGameObjectWithTag("Apple")==null)
+
+        GameObject[] apples = GameObject.FindGameObjectsWithTag("Apple");
+
+        // Count the number of apples
+        int count = apples.Length;
+        if (count <2)
         {
             dialogue.SetActive(true);
+            foreach (GameObject apple in apples)
+            {
+                Destroy (apple);
+            }
         }
     }
 }

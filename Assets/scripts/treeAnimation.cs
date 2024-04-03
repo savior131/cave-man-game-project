@@ -50,13 +50,13 @@ public class treeAnimation : MonoBehaviour
     void SmoothZoomOut()
     {
         cam.m_Lens.OrthographicSize = Mathf.Lerp(cam.m_Lens.OrthographicSize,size,Time.deltaTime);
-        if (size - cam.m_Lens.OrthographicSize < 0.2)
+        if (size - cam.m_Lens.OrthographicSize < 0.1)
             zoomOut = false;
     }
     void SmoothZoomIn()
     {
         cam.m_Lens.OrthographicSize = Mathf.Lerp(cam.m_Lens.OrthographicSize, initSize, Time.deltaTime);
-        if(cam.m_Lens.OrthographicSize-initSize<0.2)
+        if(cam.m_Lens.OrthographicSize-initSize<0.1)
             zoomIn = false;
     }
     IEnumerator omg()
