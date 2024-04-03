@@ -15,6 +15,9 @@ TagManager:
   - mina
   - Apple
   - Meat
+  - village
+  - city
+  - region
   layers:
   - Default
   - TransparentFX
