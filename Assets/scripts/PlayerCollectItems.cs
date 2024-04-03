@@ -9,9 +9,10 @@ public class PlayerCollectItems : MonoBehaviour
 {
     public static int appleCount , meatCount;
     public static int score = 0;
-    
+    int count = 0;
     [SerializeField] GameObject dialogue;
     [SerializeField] TextMeshProUGUI appleText, meatText, ScoreText;
+    GameObject[] apples;
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("collide");
@@ -19,12 +20,21 @@ public class PlayerCollectItems : MonoBehaviour
         {
             Destroy(other.gameObject);
             appleCount++;
+            count--;
+
         }
         if (other.gameObject.CompareTag("Meat"))
         {
             Destroy(other.gameObject);
             meatCount++;
         }
+    }
+    private void Start()
+    {
+        apples = GameObject.FindGameObjectsWithTag("Apple");
+
+        // Count the number of apples
+        count = apples.Length;
     }
     private void Update()
     {
@@ -37,10 +47,7 @@ public class PlayerCollectItems : MonoBehaviour
         meatText.text = meatCount.ToString();
 
 
-        GameObject[] apples = GameObject.FindGameObjectsWithTag("Apple");
 
-        // Count the number of apples
-        int count = apples.Length;
         if (count <2)
         {
             dialogue.SetActive(true);

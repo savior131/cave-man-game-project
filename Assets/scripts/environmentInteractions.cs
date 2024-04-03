@@ -19,7 +19,7 @@ public class EnvironmentInteractions : MonoBehaviour
     bool foundDecoration;
     bool foundTalkable;
     bool foundCollectable;
-    public static bool spearTaken=false;
+    public static bool spearTaken=true;
     bool collectedTrees = false;
     GameObject collidedOBJ;
    [SerializeField] GameObject spearInHand;

@@ -19,8 +19,11 @@ public class Interactions : MonoBehaviour
     }
     IEnumerator f()
     {
+        PlayerController controller = GetComponent<PlayerController>();
+        controller.enabled = false;
         canAttack = false;
         yield return new WaitForSeconds(1f);
         canAttack = true;
+        controller.enabled = true;
     }
 }
