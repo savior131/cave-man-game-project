@@ -32,7 +32,7 @@ public class treeAnimation : MonoBehaviour
     }
     void dialogueActivator()
     {
-        dialogue.SetActive(true);
+       // dialogue.SetActive(true);
     }
     
 }

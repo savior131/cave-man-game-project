@@ -18,6 +18,7 @@ public class answer : MonoBehaviour
     public void correctAnswer()
     {
         dialogueToggle.dialogueFinished=true;
+        PlayerCollectItems.score += 50; 
         aduio.playCorrectAnswerSoundEffect();
         otherSpeaker.SetActive(false);
         gameObject.SetActive(false);
@@ -25,6 +26,7 @@ public class answer : MonoBehaviour
     public void correctGoNext()
     {
         dialogueToggle.dialogueFinished = true;
+        PlayerCollectItems.score += 50;
         aduio.playCorrectAnswerSoundEffect();
         StartCoroutine(delayNextScene());
         
@@ -36,6 +38,7 @@ public class answer : MonoBehaviour
     public void wrongAnswer()
     {
         CameraShake.instance.setCameraShake(4, 0.3f);
+        PlayerCollectItems.score -= 50;
         aduio.playWrongAnswerSoundEffect();
         StartCoroutine(delaySceneRealode());
     }
