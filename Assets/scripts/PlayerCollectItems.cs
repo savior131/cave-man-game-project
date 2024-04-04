@@ -12,12 +12,14 @@ public class PlayerCollectItems : MonoBehaviour
     int count = 0;
     [SerializeField] GameObject dialogue;
     [SerializeField] TextMeshProUGUI appleText, meatText, ScoreText;
+    [SerializeField] AudioSource eatAudio;
     GameObject[] apples;
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("collide");
         if (other.gameObject.CompareTag("Apple"))
         {
+            eatAudio.Play();
             Destroy(other.gameObject);
             appleCount++;
             count--;
@@ -25,6 +27,7 @@ public class PlayerCollectItems : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Meat"))
         {
+            eatAudio.Play();
             Destroy(other.gameObject);
             meatCount++;
         }

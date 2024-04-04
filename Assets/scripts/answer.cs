@@ -36,13 +36,15 @@ public class answer : MonoBehaviour
     public void correctSound()
     {
         aduio.playCorrectAnswerSoundEffect();
+      
+
     }
     public void wrongAnswer()
     {
         CameraShake.instance.setCameraShake(4, 0.3f);
         PlayerCollectItems.score -= 50;
         aduio.playWrongAnswerSoundEffect();
-        StartCoroutine(delaySceneRealode());
+    /*    StartCoroutine(delaySceneRealode());*/
     }
     IEnumerator delaySceneRealode()
     {

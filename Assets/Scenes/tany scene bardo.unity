@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4514314, g: 0.5007769, b: 0.57151306, a: 1}
+  m_IndirectSpecularColor: {r: 0.4514327, g: 0.50077677, b: 0.57152814, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3791,9 +3791,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89c18aba7be678a40a726f92636f8a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  cam: {fileID: 0}
   handler:
   - {fileID: 563992614}
   button: {fileID: 364373768}
+  size: 0
 --- !u!95 &1007552081 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1217782930962604180, guid: 2d70e74442e901e4ab07aac82c996c8d, type: 3}
@@ -6031,6 +6034,10 @@ PrefabInstance:
       propertyPath: appleText
       value: 
       objectReference: {fileID: 1994651874}
+    - target: {fileID: 7484735922397220908, guid: 2d70e74442e901e4ab07aac82c996c8d, type: 3}
+      propertyPath: surfaceType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7935603493959876110, guid: 2d70e74442e901e4ab07aac82c996c8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35.328835

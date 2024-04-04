@@ -15,8 +15,8 @@ public class playerTalk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(dialogueToggle.dialogueFinished);
-        if (dialogueToggle.dialogueFinished)
+        Debug.Log(dialogueToggle.dialogueStarted);
+        if (dialogueToggle.dialogueStarted)
         {
 
             if(!startedTalking)
@@ -26,6 +26,7 @@ public class playerTalk : MonoBehaviour
         }
         else
         {
+         
             startedTalking = false;
             GetComponent<PlayerController>().enabled = enabled;
             anim.SetLayerWeight(1, 0);

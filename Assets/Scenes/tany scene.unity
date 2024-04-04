@@ -8703,6 +8703,11 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 5907976213283403067, guid: c60edd51c065ceb46b345849a03bc106, type: 3}
   m_PrefabInstance: {fileID: 454329729}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1876406944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 622988391250798269, guid: 2d70e74442e901e4ab07aac82c996c8d, type: 3}
+  m_PrefabInstance: {fileID: 7407104190651566213}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1897259178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6239969156481072347, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
@@ -10429,7 +10434,7 @@ PrefabInstance:
     - target: {fileID: 920358504961045568, guid: 2d70e74442e901e4ab07aac82c996c8d, type: 3}
       propertyPath: spearInHand
       value: 
-      objectReference: {fileID: 1060378126}
+      objectReference: {fileID: 1876406944}
     - target: {fileID: 920358504961045568, guid: 2d70e74442e901e4ab07aac82c996c8d, type: 3}
       propertyPath: collectButton
       value: 
@@ -10454,6 +10459,10 @@ PrefabInstance:
       propertyPath: appleText
       value: 
       objectReference: {fileID: 1500198988}
+    - target: {fileID: 7484735922397220908, guid: 2d70e74442e901e4ab07aac82c996c8d, type: 3}
+      propertyPath: surfaceType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7935603493959876110, guid: 2d70e74442e901e4ab07aac82c996c8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35.328835

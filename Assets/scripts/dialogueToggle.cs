@@ -15,6 +15,7 @@ public class dialogueToggle : MonoBehaviour
     bool zoomIn;
     public static bool zoomOut;
     public static bool dialogueFinished=false;
+    public static bool dialogueStarted=false;
     int i = 0;
     public void enable()
     {
@@ -24,6 +25,7 @@ public class dialogueToggle : MonoBehaviour
         handler[i].SetActive(true);
         button.SetActive(false);
         dialogueFinished = true;
+        dialogueStarted = true;
         i++;
     }
     private void Update()
@@ -35,7 +37,8 @@ public class dialogueToggle : MonoBehaviour
     }
     void SmoothZoomOut()
     {
-        dialogueFinished = false;
+        dialogueStarted = false;
+        //dialogueFinished = false;
         zoomIn = false;
         cam.Follow=player;
         cam.m_Lens.OrthographicSize = Mathf.Lerp(cam.m_Lens.OrthographicSize, initSize, Time.deltaTime);

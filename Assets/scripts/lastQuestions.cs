@@ -10,6 +10,7 @@ public class lastQuestions : MonoBehaviour
     int i = 0; 
     public void nextQuestions()
     {
+        PlayerCollectItems.score += 50;
         mina.GetComponent<Animator>().SetBool("talk", true);
      /*   if(i==dialogues.Length-1) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
