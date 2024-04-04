@@ -35,6 +35,7 @@ public class dialogueToggle : MonoBehaviour
     }
     void SmoothZoomOut()
     {
+        dialogueFinished = false;
         zoomIn = false;
         cam.Follow=player;
         cam.m_Lens.OrthographicSize = Mathf.Lerp(cam.m_Lens.OrthographicSize, initSize, Time.deltaTime);
