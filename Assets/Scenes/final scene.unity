@@ -1821,11 +1821,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: entries.Array.data[2].text
-      value: "\u0645\u0627\u0630\u0627 \u0643\u0648\u0646\u062A \u0627\u0648\u0627\u0644\u0627\u061F"
+      value: "\u0645\u0627\u0630\u0627 \u0628\u0646\u064A\u062A \u0627\u0648\u0644\u0627\u061F"
       objectReference: {fileID: 0}
     - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: characters.Array.data[0].name
-      value: "\u0627\u0644\u0641\u0631\u0639\u0648\u0646 \u0627\u0644\u0635\u063A\u064A\u0631 "
+      value: "\u0627\u0644\u0641\u0631\u0639\u0648\u0646 \u0627\u0644\u0635\u063A\u064A\u0631"
       objectReference: {fileID: 0}
     - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: characters.Array.data[1].name
@@ -3457,6 +3457,10 @@ PrefabInstance:
       value: "\u0645\u0627\u0630\u0627 \u0643\u0648\u0646\u062A \u0627\u0648\u0627\u0644\u0627\u061F"
       objectReference: {fileID: 0}
     - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
+      propertyPath: characters.Array.data[0].name
+      value: "\u0627\u0644\u0641\u0631\u0639\u0648\u0646 \u0627\u0644\u0635\u063A\u064A\u0631 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: characters.Array.data[1].name
       value: "\u0627\u0644\u063A\u0632\u0627\u0644"
       objectReference: {fileID: 0}
@@ -3485,13 +3489,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
+      propertyPath: characters.Array.data[0].characterImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a08ddae573e3c7b469ec6cce96713010, type: 3}
+    - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: characters.Array.data[3].characterImage
       value: 
-      objectReference: {fileID: 21300000, guid: f530757d1fa82d845a6183ba68030714, type: 3}
+      objectReference: {fileID: 21300000, guid: 201e7ab9c0d5330459fca4878396b2ee, type: 3}
     - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: characters.Array.data[4].characterImage
       value: 
-      objectReference: {fileID: 21300000, guid: f530757d1fa82d845a6183ba68030714, type: 3}
+      objectReference: {fileID: 21300000, guid: c7d5a8157edb71142b79e235a8cc4f06, type: 3}
     - target: {fileID: 2548367543288692664, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: m_fontSize
       value: 72
@@ -3607,6 +3615,10 @@ PrefabInstance:
       value: "\u0645\u0627\u0630\u0627 \u0643\u0648\u0646\u062A \u0627\u0648\u0627\u0644\u0627\u061F"
       objectReference: {fileID: 0}
     - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
+      propertyPath: characters.Array.data[0].name
+      value: "\u0627\u0644\u0641\u0631\u0639\u0648\u0646 \u0627\u0644\u0635\u063A\u064A\u0631 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: characters.Array.data[1].name
       value: "\u0627\u0644\u063A\u0632\u0627\u0644"
       objectReference: {fileID: 0}
@@ -3635,13 +3647,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
+      propertyPath: characters.Array.data[0].characterImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a08ddae573e3c7b469ec6cce96713010, type: 3}
+    - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: characters.Array.data[3].characterImage
       value: 
-      objectReference: {fileID: 21300000, guid: f530757d1fa82d845a6183ba68030714, type: 3}
+      objectReference: {fileID: 21300000, guid: 201e7ab9c0d5330459fca4878396b2ee, type: 3}
     - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: characters.Array.data[4].characterImage
       value: 
-      objectReference: {fileID: 21300000, guid: f530757d1fa82d845a6183ba68030714, type: 3}
+      objectReference: {fileID: 21300000, guid: c7d5a8157edb71142b79e235a8cc4f06, type: 3}
     - target: {fileID: 2548367543288692664, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: m_fontSize
       value: 72
@@ -10999,6 +11015,10 @@ PrefabInstance:
       value: "\u0645\u0627\u0630\u0627 \u0643\u0648\u0646\u062A \u0627\u0648\u0627\u0644\u0627\u061F"
       objectReference: {fileID: 0}
     - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
+      propertyPath: characters.Array.data[0].name
+      value: "\u0627\u0644\u0641\u0631\u0639\u0648\u0646 \u0627\u0644\u0635\u063A\u064A\u0631 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: characters.Array.data[1].name
       value: "\u0627\u0644\u063A\u0632\u0627\u0644"
       objectReference: {fileID: 0}
@@ -11029,11 +11049,11 @@ PrefabInstance:
     - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: characters.Array.data[3].characterImage
       value: 
-      objectReference: {fileID: 21300000, guid: f530757d1fa82d845a6183ba68030714, type: 3}
+      objectReference: {fileID: 21300000, guid: 201e7ab9c0d5330459fca4878396b2ee, type: 3}
     - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: characters.Array.data[4].characterImage
       value: 
-      objectReference: {fileID: 21300000, guid: f530757d1fa82d845a6183ba68030714, type: 3}
+      objectReference: {fileID: 21300000, guid: c7d5a8157edb71142b79e235a8cc4f06, type: 3}
     - target: {fileID: 2548367543288692664, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: m_fontSize
       value: 72
@@ -14583,6 +14603,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.0021447982
       objectReference: {fileID: 0}
+    - target: {fileID: 5525629673302484346, guid: c1b9984c06d94c9479d95710fe774329, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5743218145573036725, guid: c1b9984c06d94c9479d95710fe774329, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0000000037252903
@@ -15600,6 +15624,10 @@ PrefabInstance:
       value: "\u0645\u0627\u0630\u0627 \u0643\u0648\u0646\u062A \u0627\u0648\u0627\u0644\u0627\u061F"
       objectReference: {fileID: 0}
     - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
+      propertyPath: characters.Array.data[0].name
+      value: "\u0627\u0644\u0641\u0631\u0639\u0648\u0646 \u0627\u0644\u0635\u063A\u064A\u0631 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: characters.Array.data[1].name
       value: "\u0627\u0644\u063A\u0632\u0627\u0644"
       objectReference: {fileID: 0}
@@ -15628,13 +15656,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
+      propertyPath: characters.Array.data[0].characterImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a08ddae573e3c7b469ec6cce96713010, type: 3}
+    - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: characters.Array.data[3].characterImage
       value: 
-      objectReference: {fileID: 21300000, guid: f530757d1fa82d845a6183ba68030714, type: 3}
+      objectReference: {fileID: 21300000, guid: 201e7ab9c0d5330459fca4878396b2ee, type: 3}
     - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: characters.Array.data[4].characterImage
       value: 
-      objectReference: {fileID: 21300000, guid: f530757d1fa82d845a6183ba68030714, type: 3}
+      objectReference: {fileID: 21300000, guid: c7d5a8157edb71142b79e235a8cc4f06, type: 3}
     - target: {fileID: 2548367543288692664, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: m_fontSize
       value: 72

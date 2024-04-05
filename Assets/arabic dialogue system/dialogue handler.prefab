@@ -364,17 +364,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characters:
-  - name: "\u0627\u0646\u0627 \u0627\u064A\u0647 \u0627\u0644\u064A \u062C\u0627\u0628\u0646\u064A
-      \u0647\u0646\u0627"
-    characterImage: {fileID: 21300000, guid: f530757d1fa82d845a6183ba68030714, type: 3}
+  - name: "\u0631\u062C\u0644 \u0627\u0644\u0643\u0647\u0641"
+    characterImage: {fileID: 21300000, guid: 894dbfd7e4e53384b8b45c9383e36a38, type: 3}
   - name: "\u0627\u0644\u063A\u0632\u0627\u0644"
     characterImage: {fileID: 21300000, guid: f530757d1fa82d845a6183ba68030714, type: 3}
   - name: "\u0627\u0644\u0635\u062E\u0631\u0629"
-    characterImage: {fileID: 21300000, guid: f530757d1fa82d845a6183ba68030714, type: 3}
+    characterImage: {fileID: 21300000, guid: 65a1493ccfe1a5b438810013d583b744, type: 3}
   - name: "\u0645\u064A\u0646\u0627"
-    characterImage: {fileID: 21300000, guid: f530757d1fa82d845a6183ba68030714, type: 3}
+    characterImage: {fileID: 21300000, guid: 201e7ab9c0d5330459fca4878396b2ee, type: 3}
   - name: "\u0627\u0644\u0646\u0628\u062A\u0629"
-    characterImage: {fileID: 21300000, guid: f530757d1fa82d845a6183ba68030714, type: 3}
+    characterImage: {fileID: 21300000, guid: c7d5a8157edb71142b79e235a8cc4f06, type: 3}
   entries:
   - text: "\u0647\u0644 \u062A\u0631\u064A\u062F \u0627\u0644\u0627\u0633\u062A\u0642\u0631\u0627\u0631
       \u0639\u0644\u0649 \u0648\u0627\u062F\u064A \u0627\u0644\u0646\u064A\u0644"
@@ -398,6 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 587dcb13989d5f14491a6da79c7b5cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  otherSpeaker: {fileID: 0}
 --- !u!114 &1340084717727190682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 587dcb13989d5f14491a6da79c7b5cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  otherSpeaker: {fileID: 0}
 --- !u!114 &3328886479165827640
 MonoBehaviour:
   m_ObjectHideFlags: 0

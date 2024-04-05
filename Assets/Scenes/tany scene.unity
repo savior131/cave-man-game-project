@@ -925,6 +925,10 @@ PrefabInstance:
       propertyPath: entries.Array.data[0].speaker
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1702041624105535466, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
+      propertyPath: characters.Array.data[1].characterImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 86642d2cf16e25748a8451db92cca758, type: 3}
     - target: {fileID: 3137377514582876891, guid: 66f0311afe13e9241af44410e4cad9ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: -247.93411
@@ -6195,6 +6199,7 @@ MonoBehaviour:
   appleText: {fileID: 1500198988}
   meatText: {fileID: 623699511}
   ScoreText: {fileID: 390155779}
+  eatAudio: {fileID: 0}
 --- !u!65 &1342943295
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7713,7 +7718,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ebf9dcee5b4e9434fa22d1785a0b30af, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.242
+  m_Volume: 0.025
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9034,7 +9039,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2227668171922318372, guid: f15d91f889455a3459cac4bae99739ca, type: 3}
       propertyPath: m_Volume
-      value: 0.216
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 2227668171922318372, guid: f15d91f889455a3459cac4bae99739ca, type: 3}
       propertyPath: m_PlayOnAwake
@@ -10439,6 +10444,10 @@ PrefabInstance:
       propertyPath: collectButton
       value: 
       objectReference: {fileID: 504583489}
+    - target: {fileID: 2341979491016012329, guid: 2d70e74442e901e4ab07aac82c996c8d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2614400599979645113, guid: 2d70e74442e901e4ab07aac82c996c8d, type: 3}
       propertyPath: m_Name
       value: player (1)

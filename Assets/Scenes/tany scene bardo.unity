@@ -6014,6 +6014,10 @@ PrefabInstance:
       propertyPath: characterController
       value: 
       objectReference: {fileID: 1095413974}
+    - target: {fileID: 2341979491016012329, guid: 2d70e74442e901e4ab07aac82c996c8d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2614400599979645113, guid: 2d70e74442e901e4ab07aac82c996c8d, type: 3}
       propertyPath: m_Name
       value: player (1) Variant
@@ -6394,7 +6398,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ebf9dcee5b4e9434fa22d1785a0b30af, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.165
+  m_Volume: 0.025
   m_Pitch: 1
   Loop: 0
   Mute: 0

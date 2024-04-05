@@ -59,7 +59,7 @@ public class EnvironmentInteractions : MonoBehaviour
                 foundDecoration = true;
                 info.text = cols[i].gameObject.tag;
             }
-            else if ((whatIsTalkable & (1 << cols[i].gameObject.layer)) != 0)
+            else if ((whatIsTalkable & (1 << cols[i].gameObject.layer)) != 0&&!dialogueToggle.dialogueStarted)
             {
                     mean.position = new Vector3(
                     (cols[i].gameObject.transform.position.x + transform.position.x) / 2,
